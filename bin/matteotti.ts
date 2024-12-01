@@ -3,7 +3,7 @@ import * as cdk from 'aws-cdk-lib';
 import { MatteottiStack } from '../lib/matteotti-stack';
 
 const app = new cdk.App();
-new MatteottiStack(app, 'MatteottiStack', {
+new MatteottiStack(app, 'Matteotti', {
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
    * but a single synthesized template can be deployed anywhere. */
