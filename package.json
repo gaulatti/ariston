@@ -8,7 +8,13 @@
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
-    "cdk": "cdk"
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "cdk": "cdk",
+    "cdk:diff": "cdk diff",
+    "cdk:synth": "cdk synth",
+    "deploy": "npm run build && cdk deploy --require-approval never",
+    "build:synth": "npm run build && cdk synth"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",

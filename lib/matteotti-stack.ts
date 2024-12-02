@@ -1,16 +1,21 @@
 import { Stack, StackProps } from 'aws-cdk-lib';
+import { Repository } from 'aws-cdk-lib/aws-ecr';
 import { Construct } from 'constructs';
-// import * as sqs from 'aws-cdk-lib/aws-sqs';
+import { createPermissions } from './permissions';
 
 export class MatteottiStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    // The code that defines your stack goes here
+    /**
+     * Creates the permissions for the GitHub Actions autobuild.
+     */
+    const { githubActionsUser } = createPermissions(this);
 
-    // example resource
-    // const queue = new sqs.Queue(this, 'MatteottiQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
+    /**
+     * Creates an ECR repository for the service.
+     */
+    const repository = new Repository(this, `${this.stackName}ServiceEcrRepository`);
+    repository.grantPullPush(githubActionsUser);
   }
 }
