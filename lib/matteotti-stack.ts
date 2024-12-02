@@ -15,7 +15,9 @@ export class MatteottiStack extends Stack {
     /**
      * Creates an ECR repository for the service.
      */
-    const repository = new Repository(this, `${this.stackName}ServiceEcrRepository`);
+    const repository = new Repository(this, `${this.stackName}AristonEcrRepository`, {
+      repositoryName: `${this.stackName.toLocaleLowerCase()}-ariston`,
+    });
     repository.grantPullPush(githubActionsUser);
   }
 }
