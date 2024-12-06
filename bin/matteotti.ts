@@ -1,6 +1,12 @@
 #!/usr/bin/env node
 import * as cdk from 'aws-cdk-lib';
 import { MatteottiStack } from '../lib/matteotti-stack';
+import { config } from 'dotenv'
+
+/**
+ * Loads the environment variables from the .env file.
+ */
+config();
 
 const app = new cdk.App();
 new MatteottiStack(app, 'Matteotti', {
