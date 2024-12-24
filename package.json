@@ -1,8 +1,8 @@
 {
-  "name": "matteotti",
+  "name": "ariston",
   "version": "0.1.0",
   "bin": {
-    "matteotti": "bin/matteotti.js"
+    "ariston": "bin/ariston.js"
   },
   "scripts": {
     "build": "tsc",

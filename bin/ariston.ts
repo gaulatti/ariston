@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import * as cdk from 'aws-cdk-lib';
-import { MatteottiStack } from '../lib/matteotti-stack';
 import { config } from 'dotenv'
+import { AristonStack } from '../lib/ariston-stack';
 
 /**
  * Loads the environment variables from the .env file.
@@ -9,7 +9,7 @@ import { config } from 'dotenv'
 config();
 
 const app = new cdk.App();
-new MatteottiStack(app, 'Matteotti', {
+new AristonStack(app, 'Ariston', {
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
    * but a single synthesized template can be deployed anywhere. */

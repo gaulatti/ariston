@@ -6,7 +6,7 @@ const createGitHubActionsPermissions = (stack: Stack) => {
    * Create an IAM user for Github Actions
    */
   const githubActionsUser = new User(stack, `${stack.stackName}GithubActionsUser`, {
-    userName: 'github-actions-user',
+    userName: `${stack.stackName.toLowerCase()}-github-actions-user`,
   });
 
   /**

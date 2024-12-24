@@ -34,7 +34,7 @@ const createDistribution = (stack: Stack, s3BucketSource: Bucket, certificate: I
       cachePolicy: CachePolicy.CACHING_OPTIMIZED,
     },
     defaultRootObject: 'index.html',
-    domainNames: [`${process.env.APP_SUBDOMAIN}.${process.env.HOSTED_ZONE_NAME}`],
+    domainNames: [`ariston.${process.env.HOSTED_ZONE_NAME}`],
     certificate,
     minimumProtocolVersion: SecurityPolicyProtocol.TLS_V1_2_2021,
     errorResponses: [
@@ -60,7 +60,7 @@ const createDistribution = (stack: Stack, s3BucketSource: Bucket, certificate: I
  */
 const createCNAME = (stack: Stack, zone: IHostedZone, distribution: Distribution) => {
   const record = new CnameRecord(stack, `${stack.stackName}FrontendCNAME`, {
-    recordName: process.env.APP_SUBDOMAIN!,
+    recordName: 'ariston',
     zone,
     domainName: distribution.distributionDomainName,
   });
