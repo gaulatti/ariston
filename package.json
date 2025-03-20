@@ -1,5 +1,5 @@
 {
-  "name": "ariston",
+  "name": "@ariston/infrastructure",
   "version": "0.1.0",
   "bin": {
     "ariston": "bin/ariston.js"
